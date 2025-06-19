@@ -49,6 +49,11 @@ El sistema ofrece reproducción personalizada y gestión eficiente de música en
 
 ## 4. Matrices de Trazabilidad
 ### Stakeholders vs Requerimientos
+|		|	RF01 Cambio de tema visual	|	RF02 Reproducir canción	|	RF03 Buscar canción	|	RF04 Mostrar información de la canción	|	RF05 Crear lista de reproducción	|	RF06 Editar lista de reproducción	|	RF07 Cargar canciones a la biblioteca	|	RF08 Eliminar canciones de la biblioteca	|	RF09 Editar canciones de la biblioteca	|
+|:-------------:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+| Usuario final	|	X	|	X	|	X	|	X	|	X	|	X	|		|		|		|
+| Administrador	|		|		|		|		|		|		|	X	|	X	|	X	|
+| Disqueras     |		|		|		|		|		|		|	X	|		|		|
 
 ### Stakeholders vs CDU
 
