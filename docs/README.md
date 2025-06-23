@@ -80,6 +80,9 @@ El sistema ofrece reproducción personalizada y gestión eficiente de música en
 * **RNF09 – Instalación Simplificada:** El sistema debe poder distribuirse mediante un archivo ejecutable `.jar` o instalador que incluya todas las dependencias necesarias.
 
 ### Requisitos de Restricción (Drivers de Restricción)
+* **RNF10 Plataforma permitida:** La aplicación debe desarrollarse únicamente como sistema de escritorio o aplicación web, excluyendo plataformas móviles.
+* **RNF11 Uso obligatorio de patrones de diseño:** Se deben implementar al menos un patrón creacional, uno estructural y uno de comportamiento como parte de la arquitectura del sistema.
+* **RNF12 Compatibilidad multiplataforma:** Si se elige una aplicación de escritorio, debe ser compatible con Windows, macOS y Linux.
 
 ## 4. Matrices de Trazabilidad
 
