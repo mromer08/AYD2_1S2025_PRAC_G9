@@ -1,5 +1,16 @@
 # Practica única - Documentacion Sistema de Reproducción de Música
 
+## Tabla de contenido
+- [Video explicativo](#0-video-explicativo)
+- [Core del negocio](#1-core-del-negocio)
+- [Casos de uso expandidos](#2-casos-de-uso-expandidos)
+- [Drivers arquitectónicos](#3-drivers-arquitectónicos)
+- [Matrices de Trazabilidad](#4-matrices-de-trazabilidad)
+- [Patrones de Diseño Utilizados](#5-patrones-de-diseño-utilizados)
+
+## 0. Video explicativo
+Se realizo un video explicando los patrones utilizados y el funcionamiento de la aplicacion. Se puede consultar en [drive](https://drive.google.com/drive/folders/1L0_plK3fW5IjoDDww3xU2R54rOAeoZf2?usp=sharing)
+
 ## 1. Core del Negocio
 
 ### Descripcion
