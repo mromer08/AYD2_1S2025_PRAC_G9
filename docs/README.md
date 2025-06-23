@@ -61,28 +61,23 @@ El sistema ofrece reproducción personalizada y gestión eficiente de música en
 * **RNF02 – Cambio Rápido de Canción:** El cambio entre canciones debe realizarse en menos de 500 milisegundos sin interrupciones audibles.
 
 #### Usabilidad
-
-* **RNF03 – UI para Escritorio:** La interfaz debe adaptarse correctamente a sistemas operativos de escritorio como Windows, Linux y macOS.
-* **RNF04 – UI Intuitiva:** El usuario debe poder utilizar el reproductor sin necesidad de capacitación previa, con controles visibles y autoexplicativos.
+* **RNF03 – UI Intuitiva:** El usuario debe poder utilizar el reproductor sin necesidad de capacitación previa, con controles visibles y autoexplicativos.
 
 #### Confiabilidad
-
-* **RNF05 – Manejo de Errores:** El sistema debe detectar archivos de audio corruptos o no compatibles, mostrando mensajes claros sin cerrarse inesperadamente.
-* **RNF06 – Estabilidad Continua:** La aplicación debe poder ejecutarse durante sesiones prolongadas (mínimo 2 horas continuas) sin pérdidas de rendimiento ni cierres inesperados.
+* **RNF04 – Estabilidad Continua:** La aplicación debe poder ejecutarse durante sesiones prolongadas (mínimo 2 horas continuas) sin pérdidas de rendimiento ni cierres inesperados.
 
 #### Mantenibilidad
 
-* **RNF07 – Modularidad del Código:** El sistema debe estar estructurado en módulos independientes para facilitar su mantenimiento y evolución..
+* **RNF05 – Modularidad del Código:** El sistema debe estar estructurado en módulos independientes para facilitar su mantenimiento y evolución..
 
 #### Portabilidad
 
-* **RNF08 – Multiplataforma:** El sistema debe poder ejecutarse correctamente en distintos sistemas operativos de escritorio sin necesidad de modificaciones en el código base.
-* **RNF09 – Instalación Simplificada:** El sistema debe poder distribuirse mediante un archivo ejecutable `.jar` o instalador que incluya todas las dependencias necesarias.
+* **RNF06 – Multiplataforma:** El sistema debe poder ejecutarse correctamente en distintos sistemas operativos de escritorio sin necesidad de modificaciones en el código base.
 
 ### Requisitos de Restricción (Drivers de Restricción)
-* **RNF10 Plataforma permitida:** La aplicación debe desarrollarse únicamente como sistema de escritorio o aplicación web, excluyendo plataformas móviles.
-* **RNF11 Uso obligatorio de patrones de diseño:** Se deben implementar al menos un patrón creacional, uno estructural y uno de comportamiento como parte de la arquitectura del sistema.
-* **RNF12 Compatibilidad multiplataforma:** Si se elige una aplicación de escritorio, debe ser compatible con Windows, macOS y Linux.
+* **RNF07 Plataforma permitida:** La aplicación debe desarrollarse únicamente como sistema de escritorio o aplicación web, excluyendo plataformas móviles.
+* **RNF08 Uso obligatorio de patrones de diseño:** Se deben implementar al menos un patrón creacional, uno estructural y uno de comportamiento como parte de la arquitectura del sistema.
+* **RNF09 Compatibilidad multiplataforma:** Si se elige una aplicación de escritorio, debe ser compatible con Windows, macOS y Linux.
 
 ## 4. Matrices de Trazabilidad
 
