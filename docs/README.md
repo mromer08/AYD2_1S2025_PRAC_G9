@@ -18,13 +18,13 @@ El sistema ofrece reproducción personalizada y gestión eficiente de música en
 
 ### Primera Descomposición
 
-![primera_descomposicion](./assets/cdu/primera-descomposicion.png)
+![primera_descomposicion](./assets/cdu/primera-descomposicion-mod.png)
 
 ## 2. Casos de Uso Expandidos
 
 ### Diagramas
 
-![cdu01](./assets/cdu/cdu01.png)
+![cdu01](./assets/cdu/cdu01-mod.png)
 
 ![cdu02](./assets/cdu/cdu02.png)
 
