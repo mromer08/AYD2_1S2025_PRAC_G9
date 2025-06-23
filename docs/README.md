@@ -34,7 +34,7 @@ El sistema ofrece reproducción personalizada y gestión eficiente de música en
 
 ### Listado
 
-- **CDU01 - Experiencia de usuario**
+- **CDU01 - Cambio de tema**
 - **CDU02 - Gestionar lista de reproduccion**
 - **CDU03 - Gestionar reproduccion de musica**
 - **CDU04 - Gestionar biblioteca de canciones**
@@ -90,9 +90,15 @@ El sistema ofrece reproducción personalizada y gestión eficiente de música en
 |   Disqueras   |                            |                          |                      |                                          |                                  |                                    |                   X                   |                                          |                                        |
 
 ### Stakeholders vs CDU
+|		|	CDU01 Cambio de tema	|	CDU02 Gestionar lista de reproducción	|	CDU03 Gestionar reproducción de música	|	CDU04 Gestionar biblioteca de canciones	|
+|:-------------:|:-----:|:-----:|:-----:|:-----:|
+| Usuario final |             X             |            X            |          X          |                                        |
+| Administrador |                            |                          |                      |                   X                      |
+|   Disqueras   |                            |                          |                      |                   X                      |
+
 
 ### Requerimientos vs CDU
-|		|	CDU01 Experiencia de usuario	|	CDU02 Gestionar lista de reproducción	|	CDU03 Gestionar reproducción de música	|	CDU04 Gestionar biblioteca de canciones	|
+|		|	CDU01 Cambio de tema	|	CDU02 Gestionar lista de reproducción	|	CDU03 Gestionar reproducción de música	|	CDU04 Gestionar biblioteca de canciones	|
 |:-------------:|:-----:|:-----:|:-----:|:-----:|
 | RF01 Cambio de tema visual	|	X	|		|		|		|
 | RF02 Reproducir canción	|		|		|	X	|		|
