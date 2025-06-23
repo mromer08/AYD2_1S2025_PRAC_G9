@@ -1,0 +1,270 @@
+.root {
+    -fx-background-color: #f4f8fb;
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+
+.label {
+    -fx-text-fill: black;
+}
+
+.button {
+    -fx-background-color: linear-gradient(to right, #4facfe, #00f2fe);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to right, #00c6ff, #0072ff);
+}
+
+.circular-button {
+    -fx-min-width: 30px;
+    -fx-min-height: 30px;
+    -fx-max-width: 30px;
+    -fx-max-height: 30px;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-padding: 0;
+}
+
+.text-field {
+    -fx-background-color: #f0f4f8;
+    -fx-background-insets: 0;
+    -fx-background-radius: 5;
+    -fx-padding: 8 8;
+    -fx-border-color: #6ea0f9;
+    -fx-border-radius: 5;
+    -fx-border-width: 1.5;
+    -fx-font-size: 14px;
+    -fx-text-fill: #333;
+    -fx-prompt-text-fill: #a0a0a0;
+    -fx-cursor: text;
+}
+
+.text-field:focused {
+    -fx-border-color: #6ea0f9;
+    -fx-border-width: 2;
+    -fx-background-color: white;
+}
+
+.text-field:hover {
+    -fx-border-color: #6ea0f9;
+}
+
+.toolbar {
+    -fx-background-color: #e6f0fa;
+    -fx-padding: 10;
+    -fx-spacing: 10;
+    -fx-alignment: center-right;
+    -fx-border-color: #c0d6ec;
+    -fx-border-width: 0 0 1 0;
+}
+
+.sidebar {
+    -fx-background-color: #f0f6fc;
+    -fx-padding: 10;
+    -fx-spacing: 10;
+}
+
+.player-controls {
+    -fx-background-color: #e6f0fa;
+    -fx-padding: 10;
+    -fx-spacing: 20;
+    -fx-alignment: center;
+    -fx-border-color: #c0d6ec;
+    -fx-border-width: 1 0 0 0;
+}
+
+.table-view {
+    -fx-background-color: #f4f8fb;
+    -fx-table-cell-border-color: transparent;
+    -fx-padding: 10;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #e2ecf8;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 30px;
+    -fx-border-color: transparent;
+    -fx-background-color: #e2ecf8;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #0072ff;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.split-pane {
+    -fx-background-color: #e2ecf8;
+}
+
+.split-pane > .split-pane-divider {
+    -fx-background-color: #f4f8fb;
+}
+
+/* TabPane general */
+.tab-pane {
+    -fx-background-color: #f4f8fb;
+    -fx-tab-min-width: 120px;
+    -fx-tab-max-width: 120px;
+}
+
+/* Área de pestañas (barra superior) */
+.tab-pane > .tab-header-area {
+    -fx-background-color: #e2ecf8;
+    -fx-padding: 0 0 0 10;
+}
+
+/* Fondo detrás de las pestañas (por defecto es gris, aquí lo igualamos al header) */
+.tab-pane > .tab-header-area > .tab-header-background {
+    -fx-background-color: #e2ecf8;
+}
+
+/* Pestañas individuales */
+.tab-pane > .tab-header-area > .headers-region > .tab {
+    -fx-background-color: #dce9f9;
+    -fx-background-insets: 0 1 0 1, 0, 0;
+    -fx-background-radius: 5 5 0 0;
+    -fx-padding: 5 15;
+}
+
+/* Pestaña seleccionada */
+.tab-pane > .tab-header-area > .headers-region > .tab:selected {
+    -fx-background-color: #f4f8fb;
+    -fx-border-color: #6ea0f9;
+    -fx-border-width: 0 0 3 0;
+    -fx-border-insets: 0;
+}
+
+/* Eliminar borde de enfoque azul que aparece al seleccionar una pestaña */
+.tab-pane *.focus-indicator {
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+/* Etiqueta de las pestañas */
+.tab .tab-label {
+    -fx-text-fill: #333;
+    -fx-font-weight: bold;
+}
+
+/* Etiqueta de la pestaña seleccionada */
+.tab:selected .tab-label {
+    -fx-text-fill: #0072ff;
+}
+
+/* Controles de navegación (cuando hay muchas pestañas) */
+.tab-pane > .tab-header-area > .control-buttons-container {
+    -fx-background-color: #e2ecf8;
+}
+
+.tab-pane > .tab-header-area > .control-buttons-container > .control-button {
+    -fx-background-color: linear-gradient(to right, #4facfe, #00f2fe);
+    -fx-background-radius: 5;
+    -fx-padding: 3 5;
+}
+
+.tab-pane > .tab-header-area > .control-buttons-container > .control-button:hover {
+    -fx-background-color: linear-gradient(to right, #00c6ff, #0072ff);
+}
+
+.tab-pane > .tab-header-area > .control-buttons-container > .control-button .arrow {
+    -fx-background-color: white;
+}
+
+.tab-pane > .tab-content-area {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #c0d6ec;
+    -fx-border-width: 1 0 0 0;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #ffffff;
+}
+
+.table-row-cell:even {
+    -fx-background-color: #f0f6fc;
+}
+
+.table-row-cell .table-cell {
+    -fx-text-fill: #333;
+    -fx-font-size: 14px;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #dfeeff;
+}
+
+.table-row-cell:filled:selected,
+.table-row-cell:filled:selected:focused {
+    -fx-background-color: linear-gradient(to right, #4facfe, #00f2fe);
+}
+
+.table-row-cell:selected .table-cell {
+    -fx-text-fill: #ffffff;
+}
+
+.titled-pane {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #c0d6ec;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10;
+}
+
+.titled-pane > .title {
+    -fx-background-color: #e2ecf8;
+    -fx-text-fill: #0072ff;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8 8 0 0;
+    -fx-padding: 8 12;
+    -fx-font-size: 14px;
+}
+
+.titled-pane > .content {
+    -fx-background-color: #e2ecf8;
+    -fx-padding: 10 12;
+    -fx-background-radius: 0 0 8 8;
+
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-insets: 0;
+}
+
+.sidebar .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #333;
+    -fx-padding: 8 12;
+    -fx-font-size: 14px;
+    -fx-border-color: transparent;
+}
+
+.sidebar .list-cell:hover {
+    -fx-background-color: #dfeeff;
+}
+
+.sidebar .list-cell:selected {
+    -fx-background-color: #4facfe;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+}
+
+.table-view .scroll-bar:vertical .thumb,
+.table-view .scroll-bar:horizontal .thumb {
+    -fx-background-color: #b0c8f6;
+    -fx-background-insets: 2;
+    -fx-background-radius: 5;
+}
+
+.table-view .scroll-bar:vertical .thumb:hover,
+.table-view .scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: #6ea0f9;
+}

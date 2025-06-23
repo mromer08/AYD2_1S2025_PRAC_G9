@@ -1,0 +1,266 @@
+.root {
+    -fx-background-color: #1e1e2f;
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+
+.label {
+    -fx-text-fill: white;
+}
+
+.button {
+    -fx-background-color: linear-gradient(to right, #ff416c, #ff4b2b);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to right, #ff6a00, #ee0979);
+}
+
+.circular-button {
+    -fx-min-width: 30px;
+    -fx-min-height: 30px;
+    -fx-max-width: 30px;
+    -fx-max-height: 30px;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-padding: 0;
+}
+
+.text-field {
+    -fx-background-color: #22222f;
+    -fx-background-insets: 0;
+    -fx-background-radius: 5;
+    -fx-padding: 8 8;
+    -fx-border-color: #ff8c42;
+    -fx-border-radius: 5;
+    -fx-border-width: 1.5;
+    -fx-font-size: 14px;
+    -fx-text-fill: #ddd;
+    -fx-prompt-text-fill: #888;
+    -fx-cursor: text;
+}
+
+.text-field:focused {
+    -fx-border-color: #ff8c42;
+    -fx-border-width: 2;
+    -fx-background-color: #2a2a3d;
+}
+
+.text-field:hover {
+    -fx-border-color: #ff8c42;
+}
+
+.toolbar {
+    -fx-background-color: #2a2a3d;
+    -fx-padding: 10;
+    -fx-spacing: 10;
+    -fx-alignment: center-right;
+    -fx-border-color: #444;
+    -fx-border-width: 0 0 1 0;
+}
+
+.sidebar {
+    -fx-background-color: #252536;
+    -fx-padding: 10;
+    -fx-spacing: 10;
+}
+
+.player-controls {
+    -fx-background-color: #2a2a3d;
+    -fx-padding: 10;
+    -fx-spacing: 20;
+    -fx-alignment: center;
+    -fx-border-color: #444;
+    -fx-border-width: 1 0 0 0;
+}
+
+.table-view {
+    -fx-background-color: #1e1e2f;
+    -fx-table-cell-border-color: transparent;
+    -fx-padding: 10;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #2a2a3d;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 30px;
+    -fx-border-color: transparent;
+    -fx-background-color: #2a2a3d;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #ff8c42;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.split-pane {
+    -fx-background-color: #2a2a3d;
+}
+
+.split-pane > .split-pane-divider {
+    -fx-background-color: #1e1e2f;
+}
+
+.tab-pane {
+    -fx-background-color: #1e1e2f;
+    -fx-tab-min-width: 120px;
+    -fx-tab-max-width: 120px;
+}
+
+.tab-pane > .tab-header-area {
+    -fx-background-color: #252536;
+    -fx-padding: 0 0 0 10;
+}
+
+.tab-pane > .tab-header-area > .tab-header-background {
+    -fx-background-color: #252536;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab {
+    -fx-background-color: #2a2a3d;
+    -fx-background-insets: 0 1 0 1, 0, 0;
+    -fx-background-radius: 5 5 0 0;
+    -fx-padding: 5 15;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:selected {
+    -fx-background-color: #1e1e2f;
+    -fx-border-color: #ff8c42;
+    -fx-border-width: 0 0 3 0;
+    -fx-border-insets: 0;
+}
+
+.tab-pane *.focus-indicator {
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.tab .tab-label {
+    -fx-text-fill: #ddd;
+    -fx-font-weight: bold;
+}
+
+.tab:selected .tab-label {
+    -fx-text-fill: #ff8c42;
+}
+
+.tab-pane > .tab-header-area > .control-buttons-container {
+    -fx-background-color: #252536;
+}
+
+.tab-pane > .tab-header-area > .control-buttons-container > .control-button {
+    -fx-background-color: linear-gradient(to right, #ff416c, #ff4b2b);
+    -fx-background-radius: 2;
+    -fx-padding: 3 5;
+}
+
+.tab-pane > .tab-header-area > .control-buttons-container > .control-button:hover {
+    -fx-background-color: linear-gradient(to right, #ff6a00, #ee0979);
+}
+
+.tab-pane > .tab-header-area > .control-buttons-container > .control-button .arrow {
+    -fx-background-color: white;
+}
+
+.tab-pane > .tab-content-area {
+    -fx-background-color: #1e1e2f;
+    -fx-border-color: #2a2a3d;
+    -fx-border-width: 1 0 0 0;
+}
+
+.table-row-cell:odd  { -fx-background-color: #1e1e2f; }
+.table-row-cell:even { -fx-background-color: #222336; }
+
+.table-row-cell .table-cell {
+    -fx-text-fill: #ddd;
+    -fx-font-size: 14px;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #30334a;
+}
+
+.table-row-cell:filled:selected,
+.table-row-cell:filled:selected:focused {
+    -fx-background-color: #ff8c42;
+}
+
+.table-row-cell:selected .table-cell {
+    -fx-text-fill: #1e1e2f;
+}
+
+.table-view .scroll-bar:vertical,
+.table-view .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.titled-pane {
+    -fx-background-color: #2a2a3d;
+    -fx-border-color: #444;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10;
+}
+
+.titled-pane > .title {
+    -fx-background-color: #252536;
+    -fx-text-fill: #ff8c42;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8 8 0 0;
+    -fx-padding: 8 12;
+    -fx-font-size: 14px;
+}
+
+.titled-pane > .content {
+    -fx-background-color: #1e1e2f;
+    -fx-padding: 10 12;
+    -fx-background-radius: 0 0 8 8;
+
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-insets: 0;
+}
+
+.titled-pane > .title > .text {
+    -fx-fill: white;
+    -fx-font-weight: bold;
+}
+
+.sidebar .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ddd;
+    -fx-padding: 8 12;
+    -fx-font-size: 14px;
+    -fx-border-color: transparent;
+}
+
+.sidebar .list-cell:hover {
+    -fx-background-color: #30334a;
+}
+
+.sidebar .list-cell:selected {
+    -fx-background-color: #ff8c42;
+    -fx-text-fill: #1e1e2f;
+    -fx-font-weight: bold;
+}
+
+.table-view .scroll-bar:vertical .thumb,
+.table-view .scroll-bar:horizontal .thumb {
+    -fx-background-color: #444;
+    -fx-background-insets: 2;
+    -fx-background-radius: 5;
+}
+
+.table-view .scroll-bar:vertical .thumb:hover,
+.table-view .scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: #666;
+}

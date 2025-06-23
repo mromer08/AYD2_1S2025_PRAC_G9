@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.usac.ayd2.musicplayer.controllers.player.UserController">
+
+    <!-- TOP: Barra de acciones -->
+    <top>
+        <ToolBar styleClass="toolbar">
+            <Button text="Cerrar sesión" onAction="#logout" />
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="switcher" onAction="#toggleTheme" styleClass="circular-button">
+                <tooltip>
+                    <Tooltip fx:id="switcherT" text="Tema Oscuro" />
+                </tooltip>
+            </Button>
+        </ToolBar>
+    </top>
+    <center>
+        <TabPane styleClass="tab-pane">
+            <Tab text="Biblioteca">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10"/>
+                    </padding>
+                    <Label text="Canciones en Biblioteca" />
+                    <TableView fx:id="libraryTableView" VBox.vgrow="ALWAYS" styleClass="table-view"
+                               onMouseClicked="#handlePlayLibrarySong">
+                        <columns>
+                            <TableColumn fx:id="colLibTitle" text="Título" prefWidth="200" />
+                            <TableColumn fx:id="colLibArtist" text="Artista" prefWidth="200" />
+                            <TableColumn fx:id="colLibDuration" text="Duracion" prefWidth="200" />
+                        </columns>
+                    </TableView>
+                    <HBox spacing="10" alignment="CENTER_RIGHT">
+                        <Button fx:id="btnAddToPlaylist" text="Agregar a Playlist" onAction="#btnAddToPlaylist"/>
+                    </HBox>
+                </VBox>
+            </Tab>
+
+            <Tab text="Playlists">
+                <SplitPane dividerPositions="0.3" styleClass="split-pane">
+                    <VBox spacing="10">
+                        <padding>
+                            <Insets top="10" right="10" bottom="10" left="10"/>
+                        </padding>
+                        <Label text="Playlists" />
+                        <ListView fx:id="playlistListView" VBox.vgrow="ALWAYS" styleClass="sidebar"
+                                  onMouseClicked="#handlePlaylistSelection"/>
+                        <HBox spacing="5">
+                            <Button fx:id="btnRenamePlaylist" text="Crear" onAction="#bntCreatePlaylist" />
+                            <Button fx:id="btnRenamePlaylist" text="Renombrar" onAction="#btnRenamePlaylist" />
+                            <Button fx:id="btnDeletePlaylist" text="Eliminar" onAction="#btnDeletePlaylist" />
+                        </HBox>
+                    </VBox>
+                    <VBox spacing="10">
+                        <padding>
+                            <Insets top="10" right="10" bottom="10" left="10"/>
+                        </padding>
+                        <Label text="Canciones en Playlist" />
+                        <TableView fx:id="songTableView" VBox.vgrow="ALWAYS" styleClass="table-view">
+                            <columns>
+                                <TableColumn fx:id="colTitle" text="Título" prefWidth="200" />
+                                <TableColumn fx:id="colArtist" text="Artista" prefWidth="200" />
+                                <TableColumn fx:id="colDuration" text="Duracion" prefWidth="200" />
+                            </columns>
+                        </TableView>
+                        <HBox spacing="10" alignment="CENTER_RIGHT">
+                            <Button fx:id="btnRemoveSongFromPlaylist" text="Quitar de Playlist" onAction="#btnRemoveSongFromPlaylist" />
+                        </HBox>
+                    </VBox>
+                </SplitPane>
+            </Tab>
+        </TabPane>
+    </center>
+    <bottom>
+        <HBox spacing="20" alignment="CENTER" styleClass="player-controls">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label fx:id="lblCurrentSong" text="Reproduciendo:" />
+            <Button fx:id="btnPause" styleClass="circular-button" onAction="#btnPause" />
+            <Button fx:id="btnPlay" styleClass="circular-button" onAction="#btnPlay" />
+            <Button fx:id="btnStop" styleClass="circular-button" onAction="#btnStop" />
+        </HBox>
+    </bottom>
+
+</BorderPane>
