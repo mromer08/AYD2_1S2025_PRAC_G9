@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+      "-//Hibernate/Hibernate Configuration DTD 5.3//EN"
+      "http://hibernate.org/dtd/hibernate-configuration-5.3.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/music_player</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">Nbpjxdxd%2</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Mapeo de entidades -->
+        <mapping class="com.usac.ayd2.musicplayer.models.user.User"/>
+        <mapping class="com.usac.ayd2.musicplayer.models.music.Song"/>
+        <mapping class="com.usac.ayd2.musicplayer.models.music.Playlist"/>
+        <mapping class="com.usac.ayd2.musicplayer.models.music.PlaylistSong"/>
+    </session-factory>
+</hibernate-configuration>
