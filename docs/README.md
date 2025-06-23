@@ -58,3 +58,14 @@ El sistema ofrece reproducción personalizada y gestión eficiente de música en
 ### Stakeholders vs CDU
 
 ### Requerimientos vs CDU
+|		|	CDU01 Experiencia de usuario	|	CDU02 Gestionar lista de reproducción	|	CDU03 Gestionar reproducción de música	|	CDU04 Gestionar biblioteca de canciones	|
+|:-------------:|:-----:|:-----:|:-----:|:-----:|
+| RF01 Cambio de tema visual	|	X	|		|		|		|
+| RF02 Reproducir canción	|		|		|	X	|		|
+| RF03 Buscar canción     |		|		|	X	|	X	|
+| RF04 Mostrar información de la canción     |		|		|	X	|		|
+| RF05 Crear lista de reproducción     |		|	X	|		|		|
+| RF06 Editar lista de reproducción     |		|	X	|		|		|
+| RF07 Cargar canciones a la biblioteca     |		|		|		|	X	|
+| RF08 Eliminar canciones de la biblioteca     |		|		|		|	X	|
+| RF09 Editar canciones de la biblioteca     |		|		|		|	X	|
