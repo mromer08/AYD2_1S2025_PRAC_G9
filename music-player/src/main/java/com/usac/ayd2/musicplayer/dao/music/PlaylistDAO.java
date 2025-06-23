@@ -6,10 +6,6 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import java.util.List;
 
-/**
- *
- * @author
- */
 public class PlaylistDAO {
 
     public void savePlaylist(Playlist playlist) {

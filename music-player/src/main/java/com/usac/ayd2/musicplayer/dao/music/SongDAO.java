@@ -5,10 +5,8 @@ import com.usac.ayd2.musicplayer.utils.HibernateUtil;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-/**
- *
- * @author adolfo-son
- */
+
+
 public class SongDAO {
     
     public void saveSong(Song song) {

@@ -11,11 +11,6 @@ import org.hibernate.query.Query;
 
 import java.util.List;
 
-/**
- *
- * @author adolfo-son
- */
-
 public class PlaylistSongDAO {
 
     public List<PlaylistSong> findByPlaylistId(Long playlistId) {
