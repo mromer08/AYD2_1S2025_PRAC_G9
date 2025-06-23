@@ -10,10 +10,6 @@ import com.usac.ayd2.musicplayer.utils.PasswordUtil;
 
 import javafx.scene.control.Alert.AlertType;
 
-/**
- *
- * @author adolfo-son
- */
 public class UserServiceImpl implements UserService {
 
     private static UserServiceImpl instance;

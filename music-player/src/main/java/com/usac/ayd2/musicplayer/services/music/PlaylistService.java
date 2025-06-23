@@ -4,10 +4,6 @@ import com.usac.ayd2.musicplayer.dto.music.NewPlaylistDTO;
 import com.usac.ayd2.musicplayer.dto.music.PlaylistDTO;
 import java.util.List;
 
-/**
- *
- * @author adolfo-son
- */
 public interface PlaylistService {
 
     void savePlaylist(NewPlaylistDTO newPlayListDTO);

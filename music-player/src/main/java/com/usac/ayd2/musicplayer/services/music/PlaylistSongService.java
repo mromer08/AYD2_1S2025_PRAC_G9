@@ -3,10 +3,6 @@ package com.usac.ayd2.musicplayer.services.music;
 import com.usac.ayd2.musicplayer.dto.music.SongDTO;
 import java.util.List;
 
-/**
- *
- * @author adolfo-son
- */
 public interface PlaylistSongService {
     
     List<SongDTO> getSongsInPlaylist(Long playlistId);
