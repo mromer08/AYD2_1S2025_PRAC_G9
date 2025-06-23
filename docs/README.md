@@ -1,5 +1,16 @@
 # Practica única - Documentacion Sistema de Reproducción de Música
 
+## Tabla de contenido
+- [Video explicativo](#0-video-explicativo)
+- [Core del negocio](#1-core-del-negocio)
+- [Casos de uso expandidos](#2-casos-de-uso-expandidos)
+- [Drivers arquitectónicos](#3-drivers-arquitectónicos)
+- [Matrices de Trazabilidad](#4-matrices-de-trazabilidad)
+- [Patrones de Diseño Utilizados](#5-patrones-de-diseño-utilizados)
+
+## 0. Video explicativo
+Se realizo un video explicando los patrones utilizados y el funcionamiento de la aplicacion. Se puede consultar en [drive](https://drive.google.com/drive/folders/1L0_plK3fW5IjoDDww3xU2R54rOAeoZf2?usp=sharing)
+
 ## 1. Core del Negocio
 
 ### Descripcion
@@ -109,3 +120,167 @@ El sistema ofrece reproducción personalizada y gestión eficiente de música en
 | RF07 Cargar canciones a la biblioteca     |		|		|		|	X	|
 | RF08 Eliminar canciones de la biblioteca     |		|		|		|	X	|
 | RF09 Editar canciones de la biblioteca     |		|		|		|	X	|
+
+## 5. Patrones de Diseño Utilizados
+### Patron Creacional - Singleton
+El patron singleton se utilizo en la creacion y utilizacion de servicios que se encargaban de la logica del negocio, se utilizo tambien para crear una unica instancia de conexion a la base de datos postgres y se utilizo al final en un archivo de sesion para mantener los datos del usuario autenticado en todo el ciclo de vida de la aplicacion.
+```java
+public class Session {
+
+    public static Session instance;
+
+    private UserDTO userDTO;
+
+    private Session() { }
+
+    public static Session getInstance() {
+        if (instance == null) instance = new Session();
+        return instance;
+    }
+
+    public UserDTO getUserDTO() {
+        return this.userDTO;
+    }
+
+    public void setUserDTO(UserDTO userDTO) {
+        this.userDTO = userDTO;
+    }
+
+    public void logout() {
+        this.userDTO = null;
+    }
+    
+}
+```
+### Patron Estructural - Facade
+El patrón Facade proporciona una interfaz unificada y de alto nivel que oculta la complejidad de varios componentes o clases internas, para este proyecto se utilizo para el controlador de usuario (reproductor de musica) ya que en este de manera separada se interactuaba con muchas clases que proveian los servicios necesarios para su funcionamiento, en este caso la clas MusicPlayerFacde se encaraga de la logica para la interaccion con la persistencia de datos y esta ya solo expone una unica importacion a la clase del controlador para su uso.
+```java
+public interface MusicPlayerFacade {
+
+    List<SongDTO> getAllSongs();
+    List<PlaylistDTO> getPlaylistsByUser(Long userId);
+    List<SongDTO> getSongsInPlaylist(Long playlistId);
+    void addSongToPlaylist(Long playlistId, Long songId);
+    void removeSongFromPlaylist(Long playlistId, Long songId);
+    void savePlaylist(NewPlaylistDTO newPlaylistDTO);
+    void renamePlaylist(Long playlistId, String newName);
+    void deletePlaylist(Long playlistId);
+
+}
+
+public class MusicPlayerFacadeImpl implements MusicPlayerFacade {
+
+    private final SongServiceImpl songService = SongServiceImpl.getInstance();
+    private final PlaylistServiceImpl playlistService = PlaylistServiceImpl.getInstance();
+    private final PlaylistSongServiceImpl playlistSongService = PlaylistSongServiceImpl.getInstance();
+
+    @Override
+    public List<SongDTO> getAllSongs() {
+        return songService.getAllSongs();
+    }
+
+    @Override
+    public List<PlaylistDTO> getPlaylistsByUser(Long userId) {
+        return playlistService.getPlaylistsByUser(userId);
+    }
+
+    @Override
+    public List<SongDTO> getSongsInPlaylist(Long playlistId) {
+        return playlistSongService.getSongsInPlaylist(playlistId);
+    }
+
+    @Override
+    public void addSongToPlaylist(Long playlistId, Long songId) {
+        playlistSongService.addSongToPlaylist(playlistId, songId);
+    }
+
+    @Override
+    public void removeSongFromPlaylist(Long playlistId, Long songId) {
+        playlistSongService.removeSongFromPlaylist(playlistId, songId);
+    }
+
+    @Override
+    public void savePlaylist(NewPlaylistDTO newPlaylistDTO) {
+        playlistService.savePlaylist(newPlaylistDTO);
+    }
+
+    @Override
+    public void renamePlaylist(Long playlistId, String newName) {
+        playlistService.renamePlaylist(playlistId, newName);
+    }
+
+    @Override
+    public void deletePlaylist(Long playlistId) {
+        playlistService.deletePlaylist(playlistId);
+    }
+    
+}
+
+public class UserController {
+
+    ...
+
+    private final MusicPlayerFacade musicFacade = new MusicPlayerFacadeImpl();
+
+    ...
+
+    @FXML
+    private void btnAddToPlaylist() {
+        PlaylistDTO selectedPlaylist = playlistListView.getSelectionModel().getSelectedItem();
+        SongDTO selectedSong = libraryTableView.getSelectionModel().getSelectedItem();
+        if (selectedPlaylist != null && selectedSong != null) {
+            musicFacade.addSongToPlaylist(selectedPlaylist.id(), selectedSong.id());
+            loadSongsFromPlaylist(selectedPlaylist);
+        }
+    }
+
+}
+
+```
+
+### Patron de Comportamiento - Strategy
+El patron strategy nos permitio poder gestionar de manera agrupada un conjunto de algoritmos en este caso para el cambio de tema, asi se puede hacer de forma dinamica y sin alterar nuestra logica, permitiendonos alternar entre tema claro y oscuro.
+```java
+public interface ThemeStrategy {
+    void applyTheme(Scene scene);
+}
+
+public class DarkTheme implements ThemeStrategy {
+
+    @Override
+    public void applyTheme(Scene scene) {
+        scene.getStylesheets().clear();
+        scene.getStylesheets().add(getClass().getResource("/styles/dark.css").toExternalForm());
+    }
+    
+}
+
+public class LightTheme implements ThemeStrategy {
+
+    @Override
+    public void applyTheme(Scene scene) {
+        scene.getStylesheets().clear();
+        scene.getStylesheets().add(getClass().getResource("/styles/light.css").toExternalForm());
+    }
+    
+}
+
+public class ThemeManager {
+
+    ...
+
+    public static void toggleTheme(Scene scene) {
+        isDark = !isDark;
+        currentTheme = isDark ? new DarkTheme() : new LightTheme();
+        currentTheme.applyTheme(scene);
+        try {
+            PersistenceManager.saveTheme(isDark ? "dark" : "light");
+        } catch (IOException e) {
+            System.err.println("Error al guardar el tema: " + e.getMessage());
+        }
+    }
+
+    ...
+
+}
+```
