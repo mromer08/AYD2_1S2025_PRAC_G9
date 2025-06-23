@@ -10,10 +10,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-/**
- *
- * @author
- */
 @Entity
 @Data
 @NoArgsConstructor
